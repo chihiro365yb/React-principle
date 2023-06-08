@@ -4,13 +4,13 @@ import Tabs from '../pages/Tabs';
 const routes = [
     {
         path: '/',
-        name: 'app',
-        component: Home,
+        name: 'home',
+        element: <Home />,
     },
     {
         name: 'tabs',
         path: '/tabs',
-        component: Tabs,
+        element: <Tabs />,
     },
 ];
 
