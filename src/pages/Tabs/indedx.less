@@ -1,0 +1,28 @@
+.tabs {
+    display: flex;
+    align-items: center;
+}
+
+.tab-item {
+    color: #282c34;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.tab-item:hover {
+    color: #61dafb;
+}
+
+.underline {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #61dafb;
+    transform: scale(0);
+    transition: 0.3s ease-out;
+}
+
+.active {
+    transform: scale(1);
+    transition: 0.4s ease-in;
+}
