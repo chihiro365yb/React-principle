@@ -7,7 +7,7 @@ function useSpeech(lang) {
         const recognition = new webkitSpeechRecognition();
         recognition.lang = window.navigator.language || lang;
         recognition.continuous = true;
-        recognition.interimResults = true;
+        // recognition.interimResults = true;
         const onStart = () => {
             recognition.start();
         };

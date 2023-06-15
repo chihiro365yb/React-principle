@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import useSpeech from '@/hooks/useSpeech';
 import { useEffect } from 'react';
+import { textArr } from '@/constants';
 
 export default () => {
     const textRef = useRef(null);
@@ -18,7 +19,8 @@ export default () => {
 
     useEffect(() => {
         if (text) {
-            setValue(text);
+            textArr.push(text);
+            setValue(textArr.join(''));
         }
     }, [text]);
 

@@ -1,0 +1,3 @@
+const textArr = [];
+
+export { textArr };
