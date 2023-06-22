@@ -9,7 +9,7 @@ function Square({ value, onSquareClick }) {
     );
 }
 
-function Board({ squares, xIsNext, onPlay }) {
+function Board({ squares, xIsNext, onPlay, handleRestart }) {
     function handleClick(i) {
         if (squares[i] || calculateWinner(squares)) return;
         const nextSquares = squares.slice();
@@ -32,6 +32,7 @@ function Board({ squares, xIsNext, onPlay }) {
     return (
         <>
             <h2>{status}</h2>
+            {winner && <button onClick={handleRestart}>restart</button>}
             <table cellSpacing={0}>
                 <tbody>
                     <tr className="board-row">
@@ -71,7 +72,7 @@ function Game() {
         setCurrentMove(nextMove);
     }
 
-    const move = history.map((squares, move) => {
+    const move = history.map((item, move) => {
         let description;
         if (move > 0) {
             description = `Go to move ${move}`;
@@ -86,10 +87,20 @@ function Game() {
         );
     });
 
+    function handleRestart() {
+        setHistory([Array(9).fill(null)]);
+        setCurrentMove(0);
+    }
+
     return (
         <div className="game">
             <div className="game-board">
-                <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay} />
+                <Board
+                    squares={currentSquares}
+                    xIsNext={xIsNext}
+                    onPlay={handlePlay}
+                    handleRestart={handleRestart}
+                />
             </div>
             <div className="game-info">
                 <ol>{move}</ol>
