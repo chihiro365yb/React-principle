@@ -2,6 +2,7 @@ import Home from '@/pages/Home';
 import Notfound from '@/pages/Notfound';
 import Tabs from '@/pages/Tabs';
 import Speech from '@/pages/Speech';
+import TictactoeGame from '@/pages/TictactoeGame';
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         name: 'speech',
         path: 'volume',
         element: <Speech />,
+    },
+    {
+        name: 'tic-tac-toe',
+        path: 'game',
+        element: <TictactoeGame />,
     },
     {
         name: '404',
